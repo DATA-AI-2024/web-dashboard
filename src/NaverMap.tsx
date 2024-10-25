@@ -5,8 +5,8 @@ const NaverMap = React.forwardRef((props, ref: React.Ref<any>) => {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef<naver.maps.Map | null>(null);
 
-  const lat = useMemo(() => 36.33135064483598, []);
-  const lng = useMemo(() => 127.43289957845893, []);
+  const lat = useMemo(() => 36.350526, []);
+  const lng = useMemo(() => 127.38484, []);
 
   useEffect(() => {
     console.log("ref changed for NaverMap");
@@ -17,7 +17,7 @@ const NaverMap = React.forwardRef((props, ref: React.Ref<any>) => {
       const location = new naver.maps.LatLng(lat, lng);
       mapInstanceRef.current = new naver.maps.Map(mapRef!.current, {
         center: location,
-        zoom: 17,
+        zoom: 13,
       });
     }
   }, []);
